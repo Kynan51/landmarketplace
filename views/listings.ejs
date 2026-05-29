@@ -1,0 +1,352 @@
+<%- include('_header') %>
+
+<!-- Page Header -->
+<section class="py-4 bg-light border-bottom">
+    <div class="container">
+        <h1 class="mb-2">Property Listings</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">Listings</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<div class="container py-5">
+    <div class="row">
+        <!-- Sidebar Filters -->
+        <div class="col-lg-3 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-filter"></i> Filters</h5>
+                </div>
+                <div class="card-body">
+                    <form id="filterForm">
+                        <!-- Property Type -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Property Type</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="type1" value="agricultural">
+                                <label class="form-check-label" for="type1">Agricultural</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="type2" value="residential">
+                                <label class="form-check-label" for="type2">Residential</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="type3" value="commercial">
+                                <label class="form-check-label" for="type3">Commercial</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="type4" value="industrial">
+                                <label class="form-check-label" for="type4">Industrial</label>
+                            </div>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Price Range</label>
+                            <input type="range" class="form-range" min="0" max="500000" step="10000" id="priceRange">
+                            <small class="text-muted">$0 - $<span id="priceValue">500000</span></small>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Location</label>
+                            <input type="text" class="form-control" placeholder="City or District">
+                        </div>
+
+                        <!-- Size -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Size Range</label>
+                            <div class="input-group input-group-sm mb-2">
+                                <input type="number" class="form-control" placeholder="Min">
+                                <span class="input-group-text">-</span>
+                                <input type="number" class="form-control" placeholder="Max">
+                            </div>
+                            <small class="text-muted">in acres/sq.ft</small>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Apply Filters</button>
+                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Listings -->
+        <div class="col-lg-9">
+            <!-- View Toggle & Sort -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <span class="text-muted">Showing 12 of 48 properties</span>
+                </div>
+                <div class="d-flex gap-2">
+                    <div>
+                        <label class="form-label me-2">Sort by:</label>
+                    </div>
+                    <select class="form-select form-select-sm" style="width: 200px;">
+                        <option>Newest</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Size: Large to Small</option>
+                        <option>Most Viewed</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Property Grid -->
+            <div class="row g-4">
+                <!-- Property Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm property-card">
+                        <div class="position-relative">
+                            <img src="/images/nandi.jpg" class="card-img-top" alt="Property">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">For Sale</span>
+                            <button class="btn btn-light position-absolute top-0 end-0 m-2 rounded-circle">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">5 Acres Agricultural Land</h5>
+                            <p class="text-muted small mb-2">
+                                <i class="fas fa-map-marker-alt"></i> Rural Area, District
+                            </p>
+                            <p class="lead fw-bold text-primary mb-3">$50,000</p>
+                            <div class="row text-center mb-3">
+                                <div class="col-6 border-end">
+                                    <small><i class="fas fa-expand"></i> 5 acres</small>
+                                </div>
+                                <div class="col-6">
+                                    <small><i class="fas fa-water"></i> Irrigated</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm property-card">
+                        <div class="position-relative">
+                            <img src="/images/nairobi.webp" class="card-img-top" alt="Property">
+                            <span class="badge bg-info position-absolute top-0 start-0 m-2">For Lease</span>
+                            <button class="btn btn-light position-absolute top-0 end-0 m-2 rounded-circle">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">1000 Sq.ft Residential Plot</h5>
+                            <p class="text-muted small mb-2">
+                                <i class="fas fa-map-marker-alt"></i> City Center, District
+                            </p>
+                            <p class="lead fw-bold text-primary mb-3">$75,000</p>
+                            <div class="row text-center mb-3">
+                                <div class="col-6 border-end">
+                                    <small><i class="fas fa-expand"></i> 1000 sq.ft</small>
+                                </div>
+                                <div class="col-6">
+                                    <small><i class="fas fa-road"></i> Main Road</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm property-card">
+                        <div class="position-relative">
+                            <img src="/images/kitale.webp" class="card-img-top" alt="Property">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">For Sale</span>
+                            <button class="btn btn-light position-absolute top-0 end-0 m-2 rounded-circle">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">2 Acres Commercial Space</h5>
+                            <p class="text-muted small mb-2">
+                                <i class="fas fa-map-marker-alt"></i> Business District, District
+                            </p>
+                            <p class="lead fw-bold text-primary mb-3">$150,000</p>
+                            <div class="row text-center mb-3">
+                                <div class="col-6 border-end">
+                                    <small><i class="fas fa-expand"></i> 2 acres</small>
+                                </div>
+                                <div class="col-6">
+                                    <small><i class="fas fa-city"></i> Near Mall</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm property-card">
+                        <div class="position-relative">
+                            <img src="/images/mombasa.webp" class="card-img-top" alt="Property">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">For Sale</span>
+                            <button class="btn btn-light position-absolute top-0 end-0 m-2 rounded-circle">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">3 Acres Farm Land</h5>
+                            <p class="text-muted small mb-2">
+                                <i class="fas fa-map-marker-alt"></i> Outskirts, District
+                            </p>
+                            <p class="lead fw-bold text-primary mb-3">$45,000</p>
+                            <div class="row text-center mb-3">
+                                <div class="col-6 border-end">
+                                    <small><i class="fas fa-expand"></i> 3 acres</small>
+                                </div>
+                                <div class="col-6">
+                                    <small><i class="fas fa-leaf"></i> Fertile Soil</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm property-card">
+                        <div class="position-relative">
+                            <img src="/images/mombasa legit.webp" class="card-img-top" alt="Property">
+                            <span class="badge bg-info position-absolute top-0 start-0 m-2">For Lease</span>
+                            <button class="btn btn-light position-absolute top-0 end-0 m-2 rounded-circle">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">2000 Sq.ft Office Space</h5>
+                            <p class="text-muted small mb-2">
+                                <i class="fas fa-map-marker-alt"></i> Downtown, District
+                            </p>
+                            <p class="lead fw-bold text-primary mb-3">$2,500/mo</p>
+                            <div class="row text-center mb-3">
+                                <div class="col-6 border-end">
+                                    <small><i class="fas fa-expand"></i> 2000 sq.ft</small>
+                                </div>
+                                <div class="col-6">
+                                    <small><i class="fas fa-building"></i> Modern</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm property-card">
+                        <div class="position-relative">
+                            <img src="/images/know.the.land.jpeg" class="card-img-top" alt="Property">
+                            <span class="badge bg-success position-absolute top-0 start-0 m-2">For Sale</span>
+                            <button class="btn btn-light position-absolute top-0 end-0 m-2 rounded-circle">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">800 Sq.ft Plot with House</h5>
+                            <p class="text-muted small mb-2">
+                                <i class="fas fa-map-marker-alt"></i> Residential Zone, District
+                            </p>
+                            <p class="lead fw-bold text-primary mb-3">$95,000</p>
+                            <div class="row text-center mb-3">
+                                <div class="col-6 border-end">
+                                    <small><i class="fas fa-expand"></i> 800 sq.ft</small>
+                                </div>
+                                <div class="col-6">
+                                    <small><i class="fas fa-home"></i> House</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <a href="#" class="btn btn-primary btn-sm w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5>About Land Marketplace</h5>
+                <p>Your trusted platform for buying, selling, and leasing land properties.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/" class="text-decoration-none text-white-50">Home</a></li>
+                    <li><a href="/listings" class="text-decoration-none text-white-50">Listings</a></li>
+                    <li><a href="/about" class="text-decoration-none text-white-50">About Us</a></li>
+                    <li><a href="/contact" class="text-decoration-none text-white-50">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>Contact Us</h5>
+                <p>
+                    <i class="fas fa-phone"></i> +1 (555) 123-4567<br>
+                    <i class="fas fa-envelope"></i> info@landmarketplace.com<br>
+                    <i class="fas fa-map-marker-alt"></i> 123 Business St, City
+                </p>
+            </div>
+        </div>
+        <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+        <div class="text-center text-white-50">
+            <p>&copy; 2026 Land Marketplace. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('priceRange').addEventListener('input', function() {
+        document.getElementById('priceValue').textContent = this.value;
+    });
+</script>
+</body>
+</html>

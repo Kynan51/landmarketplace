@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Land Marketplace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #f39c12;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a5c 100%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 24px;
+            color: white !important;
+        }
+        
+        .error-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        
+        .error-content {
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 20px 0 10px;
+        }
+        
+        .error-message {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .error-icon {
+            font-size: 80px;
+            color: #667eea;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .error-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-back {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 12px 40px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .btn-back:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-home {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 12px 40px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .btn-home:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0 20px;
+            margin-top: auto;
+        }
+        
+        .illustration {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-map"></i> Land Marketplace
+            </a>
+        </div>
+    </nav>
+
+    <!-- Error Content -->
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-icon">
+                <i class="fas fa-map-location-dot"></i>
+            </div>
+            
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Page Not Found</h2>
+            <p class="error-message">
+                Sorry! We couldn't find the property or page you're looking for. It might have been moved, deleted, or the URL might be incorrect.
+            </p>
+            
+            <div class="error-buttons">
+                <a href="/" class="btn btn-back btn-lg text-white">
+                    <i class="fas fa-home"></i> Go to Home
+                </a>
+                <a href="/listings" class="btn btn-home btn-lg">
+                    <i class="fas fa-search"></i> Browse Listings
+                </a>
+            </div>
+            
+            <!-- Suggested Links -->
+            <div class="mt-5 pt-4 border-top">
+                <h5 class="text-muted mb-3">You might be looking for:</h5>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <a href="/listings" class="text-decoration-none">
+                            <i class="fas fa-list text-primary"></i>
+                            <div class="small">Browse Properties</div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="/about" class="text-decoration-none">
+                            <i class="fas fa-info-circle text-primary"></i>
+                            <div class="small">About Us</div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <a href="/contact" class="text-decoration-none">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <div class="small">Contact Support</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="text-center text-white-50">
+                <p>&copy; 2026 Land Marketplace. All rights reserved.</p>
+                <small>
+                    <a href="/privacy" class="text-decoration-none text-white-50 me-3">Privacy Policy</a>
+                    <a href="/terms" class="text-decoration-none text-white-50">Terms of Service</a>
+                </small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
