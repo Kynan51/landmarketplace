@@ -20,28 +20,63 @@
         .navbar {
             background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a5c 100%);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 0.5rem 0;
         }
         
         .navbar-brand {
             font-weight: bold;
-            font-size: 24px;
+            font-size: 20px;
             color: white !important;
+            padding: 0.5rem 0 !important;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-brand {
+                font-size: 18px;
+            }
+            .navbar-nav .nav-link {
+                padding: 0.5rem 0 !important;
+                margin: 0.25rem 0 !important;
+            }
         }
         
         .nav-link {
             color: rgba(255,255,255,0.9) !important;
             transition: color 0.3s;
+            padding: 0.5rem 1rem !important;
+            font-size: 16px;
         }
-        
-        .nav-link:hover {
+
+        .nav-link:hover,
+        .nav-link:focus {
             color: var(--secondary-color) !important;
         }
         
         footer {
             background-color: #2c3e50;
             color: white;
-            padding: 40px 0 20px;
-            margin-top: 60px;
+            padding: 30px 0 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 576px) {
+            footer {
+                padding: 20px 0 15px;
+                margin-top: 30px;
+            }
+
+            footer h5 {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            footer p, footer ul {
+                font-size: 14px;
+            }
+
+            footer .row {
+                margin-bottom: 15px;
+            }
         }
         
         .btn-primary {
@@ -57,6 +92,68 @@
         .btn-secondary {
             background-color: var(--secondary-color);
             border-color: var(--secondary-color);
+        }
+
+        /* Ensure minimum touch target size */
+        .btn {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            font-size: 16px; /* Prevents zoom on iOS */
+        }
+
+        /* Responsive image sizing */
+        img.img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Better spacing on mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .display-5, .display-4 {
+                font-size: 28px !important;
+                line-height: 1.3;
+            }
+
+            .lead {
+                font-size: 16px !important;
+            }
+
+            .fs-5 {
+                font-size: 18px !important;
+            }
+
+            .card {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .display-5 {
+                font-size: 24px !important;
+            }
+
+            .lead {
+                font-size: 14px !important;
+            }
+
+            .btn-lg {
+                padding: 0.5rem 1rem;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
