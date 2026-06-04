@@ -1,35 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - Land Marketplace</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2c5aa0;
-            --secondary-color: #f39c12;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .navbar {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a5c 100%);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 24px;
-            color: white !important;
-        }
+<%- include('_header') %>
+
+<style>
+    :root {
+        --primary-color: #2c5aa0;
+        --secondary-color: #f39c12;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
         
         .error-container {
             flex: 1;
@@ -103,11 +86,7 @@
             animation: float 3s ease-in-out infinite;
         }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
+     
         .error-buttons {
             display: flex;
             gap: 15px;
@@ -167,16 +146,6 @@
             opacity: 0.8;
         }
     </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="fas fa-map"></i> Land Marketplace
-            </a>
-        </div>
-    </nav>
 
     <!-- Error Content -->
     <div class="error-container">
@@ -200,30 +169,7 @@
                 </a>
             </div>
             
-            <!-- Suggested Links -->
-            <div class="mt-5 pt-4 border-top">
-                <h5 class="text-muted mb-3">You might be looking for:</h5>
-                <div class="row text-center">
-                    <div class="col-md-4 mb-3">
-                        <a href="/listings" class="text-decoration-none">
-                            <i class="fas fa-list text-primary"></i>
-                            <div class="small">Browse Properties</div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <a href="/about" class="text-decoration-none">
-                            <i class="fas fa-info-circle text-primary"></i>
-                            <div class="small">About Us</div>
-                        </a>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <a href="/contact" class="text-decoration-none">
-                            <i class="fas fa-envelope text-primary"></i>
-                            <div class="small">Contact Support</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
@@ -239,7 +185,3 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

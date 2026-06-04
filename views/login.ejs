@@ -9,6 +9,21 @@
                         <i class="fas fa-sign-in-alt text-primary"></i> Login
                     </h2>
                     
+                    <% if (locals.message) { %>
+                        <div class="alert <%= message.includes('successful') || message.includes('Welcome') ? 'alert-success' : 'alert-warning' %> alert-dismissible fade show" role="alert">
+                            <%= message %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        <script>
+                            // Redirect to profile after 2 seconds if login was successful
+                            if ('<%= message %>'.includes('successful') || '<%= message %>'.includes('Welcome')) {
+                                setTimeout(() => {
+                                    window.location.href = '/profile';
+                                }, 1500);
+                            }
+                        </script>
+                    <% } %>
+                    
                     <form method="POST" action="/login">
                         <div class="mb-3">
                             <label for="email" class="form-label small">Email Address</label>
@@ -32,16 +47,7 @@
                                 required>
                         </div>
                         
-                        <div class="mb-3 form-check">
-                            <input 
-                                type="checkbox" 
-                                class="form-check-input" 
-                                id="remember" 
-                                name="remember">
-                            <label class="form-check-label small" for="remember">
-                                Remember me
-                            </label>
-                        </div>
+                        
                         
                         <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
                             <i class="fas fa-sign-in-alt"></i> Login
@@ -62,13 +68,6 @@
                     </a>
                 </div>
             </div>
-
-            <% if (locals.message) { %>
-                <div class="alert alert-info alert-dismissible fade show mt-3" role="alert">
-                    <%= message %>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <% } %>
         </div>
     </div>
 </div>
